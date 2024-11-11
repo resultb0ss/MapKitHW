@@ -23,11 +23,8 @@ class MainFragment : Fragment() {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
-    private lateinit var handler: Handler
-    private lateinit var runnable: Runnable
 
 
-    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,15 +32,7 @@ class MainFragment : Fragment() {
 
         _binding = FragmentMainBinding.inflate(inflater,container,false)
 
-        val permissionLauncherInternet = registerForActivityResult(
-            ActivityResultContracts.RequestPermission()
-        ) { isGranted ->
-            if (isGranted) {
-                Log.d("@@@", "Интернет разрешение дано")
-            } else {
-                Log.d("@@@", "Интернет разрешение не дано")
-            }
-        }
+
 
         val permissionLauncherLocale = registerForActivityResult(
             ActivityResultContracts.RequestPermission()
@@ -55,7 +44,6 @@ class MainFragment : Fragment() {
             }
         }
 
-        permissionLauncherInternet.launch(Manifest.permission.INTERNET)
         permissionLauncherLocale.launch(Manifest.permission.ACCESS_FINE_LOCATION)
 
         val animationImage = AnimationUtils.loadAnimation(requireContext(),R.anim.fade)

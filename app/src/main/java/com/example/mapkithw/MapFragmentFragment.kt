@@ -22,7 +22,6 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.mapkithw.databinding.ActivityMainBinding
 import com.example.mapkithw.databinding.FragmentMapFragmentBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -141,7 +140,7 @@ class MapFragmentFragment : Fragment() {
                             geocoder.getFromLocation(location.latitude, location.longitude, 1)
                         val latitude = list?.get(0)!!.latitude
                         val longitude = list[0].longitude
-                        
+
                         val myPosition = Point(latitude,longitude )
 
                         binding.mapView.map.move(
