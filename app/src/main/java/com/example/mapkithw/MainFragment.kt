@@ -12,7 +12,12 @@ import android.view.animation.AnimationUtils
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.mapkithw.Utils.Companion.ZOOM_BOUNDARY
 import com.example.mapkithw.databinding.FragmentMainBinding
+import com.yandex.mapkit.map.CameraListener
+import com.yandex.mapkit.map.CameraPosition
+import com.yandex.mapkit.map.CameraUpdateReason
+import com.yandex.mapkit.map.Map
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -68,5 +73,6 @@ class MainFragment : Fragment() {
         findNavController().navigate(R.id.action_mainFragment_to_mapFragmentFragment)
 
     }
+
 
 }
